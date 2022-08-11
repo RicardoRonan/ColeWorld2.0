@@ -6,5 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div id="albums"></div>
+  </body>
+  <script>
+    let albums = [];
+    const uContainer = document.querySelector("#albums");
+    fetch("http://localhost:2121/albums")
+      .then((res) => res.json())
+      .then((data) => {
+        albums = data;
+        console.log(data);
+        showalbums(albums);
+      });
+    function showalbums(albums) {
+      uContainer.innerHTML = "";
+      albums.forEach((album) => {
+        uContainer.innerHTML += `
+      <div class="card text-center fs-5">
+      <h1>${album.album_name}</h1>
+      </div>
+          `;
+      });
+    }
+  </script>
 </html>
