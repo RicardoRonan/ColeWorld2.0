@@ -85,6 +85,58 @@ router.get("/users/verify", (req, res) => {
   const token = req.header("x-auth-token");
   return authController.Verify(req, res);
 });
-// Importing the dependencies
+// Cart
+// view cart
+router.get("/:id/cart", (req, res) => {
+  let cart = [];
+  if (cart !== 0) {
+    try {
+      let sql = "Select cart FROM users WHERE ?";
+      let users = { id: req.params.id };
+      con.query(sql, users, (err, result) => {
+        if (err) throw err;
+        res.send(result[0].cart);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    res.send("empty");
+  }
+});
+
+router.post("//:id/cart", (req, res) => {
+  let cart = [];
+  con.query(
+    `SELECT * FROM users WHERE id = ${req.params.id}`,
+    (err, result) => {
+      if (err) throw err;
+      user_id = result[0].id;
+      let item = {
+        user_id: req.body.user_id,
+        album_name: req.body.album_name,
+        artists: req.body.artists,
+        descriptions: req.body.descriptions,
+        price: req.body.price,
+        image: req.body.image,
+        release_date: req.body.release_date,
+        quantity: req.body.quantity,
+        tracklist: req.body.tracklist,
+      };
+      if (result[0].cart !== "") {
+        cart = JSON.parse(result[0].cart);
+      }
+      cart.push(item);
+      con.query(
+        `UPDATE users SET cart = ? WHERE id = ${req.params.id}`,
+        JSON.stringify(cart),
+        (err, result) => {
+          if (err) throw err;
+          res.send(result);
+        }
+      );
+    }
+  );
+});
 
 module.exports = router;
