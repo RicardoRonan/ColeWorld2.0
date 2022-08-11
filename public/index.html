@@ -4,7 +4,172 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cole World</title>
+
+    <!-- BOOTSRAP LINK -->
+    <!-- ****************************************************************************** -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS LINK -->
+    <!-- ************************************************* -->
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
-  <body></body>
+  <body>
+
+    <!-- NAVBAR -->
+  <!-- ******************************************************** -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid navigation">
+        <div>
+          <a class="navbar-brand" href="#"
+            ><img src="./assets/cole woorld.png" class="logo" alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                style="color: white"
+                >HOME</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./albums.html" style="color: white">ALBUMS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./artists.html" style="color: white"
+                >ARTISTS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html" style="color: white">LOGIN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./register.html" style="color: white">REGISTER</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- LANDING PAGE -->
+    <!-- ********************************************************************* -->
+    <div class="landing">
+
+      <!-- CAROUSEL -- HOMEPAGE IMAGES -->
+      <!-- ***************************************************************** -->
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-pause="false"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://media.giphy.com/media/MMh4RN5LnUSjkpuOTs/giphy.gif"
+              class="d-block"
+              alt="..."
+            />
+            <div class="title-cont">
+              <h1 id="amari" class="gap-3">Eeny, meeny, miny, moe
+                <a href="./albums.html">
+                  <button type="button" class="btn">View Albums</button>
+                </a>
+              </h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ftenor.com%2Fview%2Fmoney-cash-flow-count-gif-12963820"
+              class="d-block"
+              alt="..."
+            />
+            <div class="title-cont">
+              <h1 id="count_it">
+                Can't take it when you die <br />
+                But you can't live without it
+                <a href="https://www.youtube.com/watch?v=vUTI4bPdlgE" target="_blank">
+                  <button type="button" class="btn">Watch the video - ATM</button>
+                </a>
+              </h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="http://itsbizkit.com/wp-content/uploads/2019/10/down.gif"
+              class="d-block"
+              alt="..."
+            />
+            <div class="title-cont">
+              <h1 id="down_bad">
+                All hail King Cole <br />
+                First of his name long may he reign
+                <a href="https://www.youtube.com/watch?v=lIM1hejXzhw" target="_blank">
+                  <button type="button" class="btn">Watch the video - down bad</button>
+                </a>
+              </h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://64.media.tumblr.com/eed664251062c2ac5c13740aa8451f89/8e7a44f024c76703-81/s540x810/75232fe2dd031e2d24280b9e1ba27f9ae0df3922.gifv"
+              class="d-block"
+              alt="..."
+            />
+            <div class="title-cont">
+              <h1 id="amari2">
+                I never fall out with a bro <br />
+                Hate when your family turn into foe
+                <a href="https://www.youtube.com/watch?v=w3333Fo6ufY" target="_blank">
+                  <button type="button" class="btn">Watch the video - Amari</button>
+                </a>
+              </h1>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://media2.giphy.com/media/evT2VzCWfhI2HLnKTs/giphy.gif"
+              class="d-block"
+              alt="..."
+            />
+            <div class="title-cont">
+              <h1 id="gang">
+                I be looking ahead of me <br />
+                Only concern is the legacy
+                <a href="https://www.youtube.com/watch?v=_8YM1Y9VzQs" target="_blank">
+                  <button type="button" class="btn">Watch the video - Aretha</button>
+                </a>
+              </h1>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
