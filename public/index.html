@@ -20,6 +20,30 @@
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
+    <div id="albums"></div>
+  </body>
+  <script>
+    let albums = [];
+    const uContainer = document.querySelector("#albums");
+    fetch("http://localhost:2121/albums")
+      .then((res) => res.json())
+      .then((data) => {
+        albums = data;
+        console.log(data);
+        showalbums(albums);
+      });
+    function showalbums(albums) {
+      uContainer.innerHTML = "";
+      albums.forEach((album) => {
+        uContainer.innerHTML += `
+      <div class="card text-center fs-5">
+      <h1>${album.album_name}</h1>
+      </div>
+          `;
+      });
+    }
+  </script>
+
 
     <!-- NAVBAR -->
   <!-- ******************************************************** -->
@@ -172,4 +196,5 @@
       crossorigin="anonymous"
     ></script>
   </body>
+>>>>>>> 89f3a8cbe51a2d78f56d62c921179ed55a52a3bb
 </html>
