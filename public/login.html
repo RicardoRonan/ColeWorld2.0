@@ -140,6 +140,17 @@
         ) {
           // window.localStorage.setItem("token");
           console.log("not a user");
+        }
+        if (
+          (email === document.getElementById("email").value,
+          password === document.getElementById("password").value)
+        ) {
+          // window.localStorage.setItem("token");
+          console.log("welcome");
+          document.getElementById("submit-btn").innerHTML =
+            window.location.replace(
+              "https://coleworld.herokuapp.com/albums.html"
+            );
         } else {
           document.getElementById("submit-btn").innerHTML =
             window.location.replace(
