@@ -136,8 +136,10 @@
         }).then((res) => console.log(res.json()));
         // window.localStorage.setItem("token");
         document.getElementById("submit-btn").innerHTML =
-          "Welcome" + user.user_name;
-        window.location.replace("https://coleworld.herokuapp.com/albums.html");
+          "Welcome" +
+          window.location.replace(
+            "https://coleworld.herokuapp.com/albums.html"
+          );
       }
     </script>
     <script
