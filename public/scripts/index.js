@@ -22,7 +22,7 @@ function showalbums(albums) {
             <button>
               Show Details
             </button>
-            <button id="add-btn" >
+            <button id="add-btn" onclick="addtoCart(event)" >
               Add to cart
             </button>
           </div>
