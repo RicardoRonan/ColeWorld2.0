@@ -105,13 +105,13 @@ router.get("/:id/cart", (req, res) => {
   }
 });
 
-router.post("//:id/cart", (req, res) => {
+router.post("/:id/cart", (req, res) => {
   let cart = [];
   con.query(
-    `SELECT * FROM users WHERE id = ${req.params.id}`,
+    `SELECT * FROM users WHERE user_id = ${req.params.id}`,
     (err, result) => {
       if (err) throw err;
-      user_id = result[0].id;
+      user_id = result[0].user_id;
       let item = {
         user_id: req.body.user_id,
         album_name: req.body.album_name,
@@ -128,7 +128,7 @@ router.post("//:id/cart", (req, res) => {
       }
       cart.push(item);
       con.query(
-        `UPDATE users SET cart = ? WHERE id = ${req.params.id}`,
+        `UPDATE users SET cart = ? WHERE user_id = ${req.params.id}`,
         JSON.stringify(cart),
         (err, result) => {
           if (err) throw err;

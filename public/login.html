@@ -79,7 +79,11 @@
     <section id="login" class="pt-5 container-fluid">
       <div>
         <h2 class="pt-5">Login to Cole World</h2>
-        <form action="submit" method="get" class="login_form d-flex mt-5">
+        <form
+          action="submit"
+          class="login_form d-flex mt-5"
+          onsubmit="Login(event)"
+        >
           <div>
             <i class="fa-solid fa-user"></i>
             <input
@@ -113,6 +117,29 @@
     </section>
 
     <!-- FONTAWESOME LINK -->
+    <script>
+      let password = document.getElementById("password").value;
+      let email = document.getElementById("email").value;
+      async function Login(e) {
+        e.preventDefault();
+        fetch("https://coleworld.herokuapp.com/users/login", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+          }),
+        }).then((res) => console.log(res.json()));
+        window.localStorage.setItem("token");
+        // document.getElementById("submit-btn").innerHTML =
+        //   "Users" +
+        //   window.location.replace(
+        //     "https://nodeapi420.herokuapp.com/users.html"
+        //   );
+      }
+    </script>
     <script
       src="https://kit.fontawesome.com/5f5e9bd818.js"
       crossorigin="anonymous"
