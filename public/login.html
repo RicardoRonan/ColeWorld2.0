@@ -134,19 +134,19 @@
             password: document.getElementById("password").value,
           }),
         }).then((res) => console.log(res.json()));
-        // if (
-        //   (email === document.getElementById("email").value,
-        //   password === document.getElementById("password").value)
-        // ) {
-        // window.localStorage.setItem("token");
-        document.getElementById("submit-btn").innerHTML =
-          window.location.replace(
-            "https://coleworld.herokuapp.com/albums.html"
-          );
+        if (
+          (email !== document.getElementById("email").value,
+          password !== document.getElementById("password").value)
+        ) {
+          // window.localStorage.setItem("token");
+          console.log("not a user");
+        } else {
+          document.getElementById("submit-btn").innerHTML =
+            window.location.replace(
+              "https://coleworld.herokuapp.com/albums.html"
+            );
+        }
       }
-      // } else {
-      //   console.log("not a user");
-      // }
     </script>
     <script
       src="https://kit.fontawesome.com/5f5e9bd818.js"
