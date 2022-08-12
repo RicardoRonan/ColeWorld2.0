@@ -35,12 +35,13 @@ function showalbums(albums) {
 // Getting One Album
 
 function getOneAlbum(id) {
-  fetch(`https://coleworld.herokuapp.com/albums/${albums.album_id}`)
+  id = albums.album_id;
+  fetch(`https://coleworld.herokuapp.com/albums/?id=${albums.album_id}`)
     .then((res) => res.json())
     .then((data) => {
       albums = data;
       console.log(data);
-      document.write(`${albums.album_name}`);
+      document.write(`<h1>${albums.album_name}</h1>`);
     });
   console.log(id);
 }
