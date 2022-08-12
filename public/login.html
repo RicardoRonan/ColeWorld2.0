@@ -122,30 +122,30 @@
     <script>
       let password = document.getElementById("password").value;
       let email = document.getElementById("email").value;
-      async function Login(e) {
-        e.preventDefault();
-        fetch("https://coleworld.herokuapp.com/users/login", {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({
-            email: document.getElementById("email").value,
-            password: document.getElementById("password").value,
-          }),
-        }).then((res) => console.log(res.json()));
-        // window.localStorage.setItem("token");
-        if (
-          (email === document.getElementById("email").value,
-          password === document.getElementById("password").value)
-        ) {
+      if (
+        (email === document.getElementById("email").value,
+        password === document.getElementById("password").value)
+      ) {
+        async function Login(e) {
+          e.preventDefault();
+          fetch("https://coleworld.herokuapp.com/users/login", {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+              email: document.getElementById("email").value,
+              password: document.getElementById("password").value,
+            }),
+          }).then((res) => console.log(res.json()));
+          // window.localStorage.setItem("token");
           document.getElementById("submit-btn").innerHTML =
             window.location.replace(
               "https://coleworld.herokuapp.com/albums.html"
             );
-        } else {
-          console.log("not a user");
         }
+      } else {
+        console.log("not a user");
       }
     </script>
     <script
