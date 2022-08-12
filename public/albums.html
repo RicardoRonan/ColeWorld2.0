@@ -128,7 +128,10 @@
       <div class="container-fluid navigation">
         <div>
           <a class="navbar-brand" href="./index.html"
-            ><img src="./assets/cole_woorld.png" class="logo" alt=""
+            ><img
+              src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png"
+              class="logo"
+              alt=""
           /></a>
           <button
             class="navbar-toggler"
@@ -180,7 +183,18 @@
       <h2 class="artists_margin mb-4">DREAMVILLE ALBUMS</h2>
       <div class="albums_div"></div>
     </section>
-
+    <script>
+      async function addtoCart(e) {
+        e.preventDefault();
+        fetch("https://coleworld.herokuapp.com/users/:id/cart", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({}),
+        }).then((res) => console.log(res.json()));
+      }
+    </script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

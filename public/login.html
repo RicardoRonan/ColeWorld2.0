@@ -26,7 +26,10 @@
       <div class="container-fluid navigation">
         <div>
           <a class="navbar-brand" href="./index.html"
-            ><img src="../assets/cole_woorld.png" class="logo" alt=""
+            ><img
+              src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png"
+              class="logo"
+              alt=""
           /></a>
           <button
             class="navbar-toggler"
@@ -76,7 +79,11 @@
     <section id="login" class="pt-5 container-fluid">
       <div>
         <h2 class="pt-5">Login to Cole World</h2>
-        <form action="submit" method="get" class="login_form d-flex mt-5">
+        <form
+          action="submit"
+          class="login_form d-flex mt-5"
+          onsubmit="Login(event)"
+        >
           <div>
             <i class="fa-solid fa-user"></i>
             <input
@@ -104,12 +111,54 @@
             <a href="">Fogort Password?</a>
           </div>
 
-          <button type="submit" class="mt-5 btn-login rounded">Login</button>
+          <button type="submit" id="submit-btn" class="mt-5 btn-login rounded">
+            Login
+          </button>
         </form>
       </div>
     </section>
 
     <!-- FONTAWESOME LINK -->
+    <script>
+      let password = document.getElementById("password").value;
+      let email = document.getElementById("email").value;
+      async function Login(e) {
+        e.preventDefault();
+        fetch("https://coleworld.herokuapp.com/users/login", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+          }),
+        }).then((res) => console.log(res.json()));
+        if (
+          (email !== document.getElementById("email").value,
+          password !== document.getElementById("password").value)
+        ) {
+          // window.localStorage.setItem("token");
+          console.log("not a user");
+        }
+        if (
+          (email === document.getElementById("email").value,
+          password === document.getElementById("password").value)
+        ) {
+          // window.localStorage.setItem("token");
+          console.log("welcome");
+          document.getElementById("submit-btn").innerHTML =
+            window.location.replace(
+              "https://coleworld.herokuapp.com/albums.html"
+            );
+        } else {
+          document.getElementById("submit-btn").innerHTML =
+            window.location.replace(
+              "https://coleworld.herokuapp.com/albums.html"
+            );
+        }
+      }
+    </script>
     <script
       src="https://kit.fontawesome.com/5f5e9bd818.js"
       crossorigin="anonymous"
