@@ -135,11 +135,15 @@
           }),
         }).then((res) => console.log(res.json()));
         // window.localStorage.setItem("token");
-        document.getElementById("submit-btn").innerHTML =
-          "Welcome" +
-          window.location.replace(
-            "https://coleworld.herokuapp.com/albums.html"
-          );
+        if (email === document.getElementById("email").value) {
+          document.getElementById("submit-btn").innerHTML =
+            "Welcome" +
+            window.location.replace(
+              "https://coleworld.herokuapp.com/albums.html"
+            );
+        } else {
+          console.log("not a user");
+        }
       }
     </script>
     <script
