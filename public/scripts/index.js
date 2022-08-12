@@ -20,8 +20,10 @@ function showalbums(albums) {
             <h2>${album.album_name}</h2>
             <p>R${album.price}</p>
             <button>
-              <i class="fab fa-youtube"></i>
-              Play trailer on YouTube
+              Show Details
+            </button>
+            <button>
+              Add to cart
             </button>
           </div>
         </div>

@@ -183,7 +183,24 @@
       <h2 class="artists_margin mb-4">DREAMVILLE ALBUMS</h2>
       <div class="albums_div"></div>
     </section>
-
+    <script>
+      let album = async function addtoCart(e) {
+        e.preventDefault();
+        fetch("https://coleworld.herokuapp.com/users/:id/cart", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({}),
+        }).then((res) => console.log(res.json()));
+        // window.localStorage.setItem("token");
+        document.getElementById("add-btn").innerHTML =
+          "Welcome" +
+          window.location.replace(
+            "https://coleworld.herokuapp.com/albums.html"
+          );
+      };
+    </script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
