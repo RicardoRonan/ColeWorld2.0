@@ -184,7 +184,7 @@
       <div class="albums_div"></div>
     </section>
     <script>
-      let album = async function addtoCart(e) {
+      async function addtoCart(e) {
         e.preventDefault();
         fetch("https://coleworld.herokuapp.com/users/:id/cart", {
           method: "POST",
@@ -193,13 +193,7 @@
           },
           body: JSON.stringify({}),
         }).then((res) => console.log(res.json()));
-        // window.localStorage.setItem("token");
-        document.getElementById("add-btn").innerHTML =
-          "Welcome" +
-          window.location.replace(
-            "https://coleworld.herokuapp.com/albums.html"
-          );
-      };
+      }
     </script>
     <script src="./scripts/index.js"></script>
   </body>
