@@ -44,4 +44,5 @@ function getOneAlbum(id) {
       document.write(`<h1>${albums.album_name}</h1>`);
     });
   console.log(id);
+  console.log(albums);
 }
