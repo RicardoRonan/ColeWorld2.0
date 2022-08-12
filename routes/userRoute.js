@@ -92,7 +92,7 @@ router.get("/:id/cart", (req, res) => {
   if (cart !== 0) {
     try {
       let sql = "Select cart FROM users WHERE ?";
-      let users = { id: req.params.id };
+      let users = { user_id: req.params.id };
       con.query(sql, users, (err, result) => {
         if (err) throw err;
         res.send(result[0].cart);
