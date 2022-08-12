@@ -19,7 +19,7 @@ function showalbums(albums) {
           <div class="descriptions">
             <h2>${album.album_name}</h2>
             <p>R${album.price}</p>
-            <button>
+            <button onclick="getOneAlbum(id)">
               Show Details
             </button>
             <button id="add-btn" onclick="addtoCart(event)" >
@@ -30,4 +30,17 @@ function showalbums(albums) {
       </div>
           `;
   });
+}
+
+// Getting One Album
+
+function getOneAlbum(id) {
+  fetch(`https://coleworld.herokuapp.com/albums/${albums.album_id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      albums = data;
+      console.log(data);
+      document.write(`${albums.album_name}`);
+    });
+  console.log(id);
 }
