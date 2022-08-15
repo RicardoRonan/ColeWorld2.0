@@ -272,10 +272,9 @@
     ></script>
 
     <script>
-      let cart = [];
       async function addtoCart(e) {
         e.preventDefault();
-        fetch("https://coleworld.herokuapp.com/users/" + users_id + "cart", {
+        fetch(`https://coleworld.herokuapp.com/users/${req.params.id}/cart`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -294,7 +293,6 @@
         }).then((res) => console.log(res.json()));
       }
     </script>
-    <script src="./scripts/index.js"></script>
     <script>
       const checkbox = document.getElementById("checkbox");
 
@@ -302,5 +300,6 @@
         document.body.classList.toggle("dark");
       });
     </script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
