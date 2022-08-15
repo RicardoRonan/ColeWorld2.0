@@ -81,25 +81,34 @@
 
     <section id="register" class="container pt-5">
       <h2 class="pt-5">Register:</h2>
-      <form action="submit" method="post" class="pt-5 d-flex registration_form">
+      <form
+        action="submit"
+        class="pt-5 d-flex registration_form"
+        onsubmit="Register(event)"
+      >
+      <div class="row">
         <label>Full Name:</label>
+        <div class="col-12">
         <div class="d-flex gap-5">
           <input
             type="text"
-            name="first_name"
-            id="first_name"
-            placeholder="First Name"
+            name="full_name"
+            id="full_name"
+            placeholder="FullName"
             class="rounded p-1"
           />
-          <input
+          <!-- <input
             type="text"
             name="last_name"
             id="last_name"
             placeholder="Last Name"
             class="rounded p-1"
-          />
+          /> -->
         </div>
+        </div>
+      <div class="row">
         <label class="mt-3">Email:</label>
+        <div class="col-12">
         <input
           type="email"
           name="email"
@@ -108,7 +117,10 @@
           required
           class="rounded p-1"
         />
+        </div>
+      <div class="row">
         <label class="mt-3">Password:</label>
+        <div class="col-12">
         <div class="d-flex gap-5">
           <input
             type="password"
@@ -118,7 +130,13 @@
             required
             class="rounded p-1"
           />
-          <input
+
+       
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-4">
+               <input
             type="password"
             name="pswd_confirm"
             id="pswd_confirm"
@@ -126,8 +144,14 @@
             required
             class="rounded p-1"
           />
+          </div>
         </div>
-        <label class="mt-3">Country:</label>
+      </div>
+        
+      
+       
+
+        <!-- <label class="mt-3">Country:</label>
         <select name="country" id="country" class="rounded p-1">
           <option value="England">England</option>
           <option value="Germany">Germany</option>
@@ -135,12 +159,41 @@
           <option value="SA">South Africa</option>
           <option value="Spain">Spain</option>
           <option value="USA">United States of America</option>
-        </select>
+        </select> -->
+      <div class="row">
+        <div class="col-12">
+          <button type="submit" class="mt-5 rounded btn-register p-1">
+            Register
+          </button>
 
-        <button type="submit" class="mt-5 rounded btn-register p-1">
-          Register
-        </button>
+        </div>
+      </div>
+      
       </form>
     </section>
+    <script>
+      let password = document.getElementById("password").value;
+      let fullname = document.getElementById("full_name").value;
+      let email = document.getElementById("email").value;
+      async function Register(e) {
+        e.preventDefault();
+        fetch("http://localhost:2121/users/register", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            full_name: document.getElementById("full_name").value,
+            address: "786 radio street",
+            country: "SA",
+            phone: "021454545",
+            user_type: "user"
+          }),
+        }).then((res) => res.json());
+        alert("Your registered successfully");
+      }
+    </script>
   </body>
 </html>

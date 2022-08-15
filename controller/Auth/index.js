@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 const con = require("../../lib/dbConnection");
 const jwt = require("jsonwebtoken");
+const { json } = require("express");
 require("dotenv").config();
 
 async function Login(req, res) {
@@ -15,7 +16,11 @@ async function Login(req, res) {
     con.query(sql, user, async (err, result) => {
       if (err) throw err;
       if (result.length === 0) {
-        res.send("Email not found please register");
+        // res.send({ msg: "Email not found please register" });
+        res.status(400).json({
+          status: "error",
+          error: "Email not found",
+        });
       } else {
         const isMatch = await bcrypt.compare(
           req.body.password,
