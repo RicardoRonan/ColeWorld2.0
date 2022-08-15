@@ -120,6 +120,7 @@
 
     <!-- FONTAWESOME LINK -->
     <script>
+      let user = null;
       let password = document.getElementById("password").value;
       let email = document.getElementById("email").value;
       async function Login(e) {
@@ -150,8 +151,12 @@
               },
             })
               .then((response) => response.json())
-              .then((json) => console.log(json));
+              .then((json) => {
+                user = json.user;
+                console.log(user);
+              });
           });
+        // localStorage.setItem("user-details", JSON.stringify(users));
 
         // document.getElementById("submit-btn").innerHTML =
         //   "welcome" +
@@ -159,6 +164,15 @@
         //     "https://coleworld.herokuapp.com/albums.html"
         //   );
       }
+      const id = user.user_id;
+
+      fetch("https://coleworld.herokuapp.com/users/" + id, {
+        method: "GET",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+        });
     </script>
     <script
       src="https://kit.fontawesome.com/5f5e9bd818.js"

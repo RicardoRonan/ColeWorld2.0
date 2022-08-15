@@ -21,6 +21,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/" + "index.html");
 });
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  next();
+});
 // Use individual routes when visiting these URLS
 app.use("/users", userRoute);
 app.use("/albums", albumsRoute);
