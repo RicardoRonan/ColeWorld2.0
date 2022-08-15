@@ -260,7 +260,7 @@ admin
       let email = document.getElementById("email").value;
       async function Register(e) {
         e.preventDefault();
-        fetch("https://coleworld.herokuapp.com/users/register", {
+        fetch("http://localhost:2121/users/register", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -279,7 +279,7 @@ admin
          document.getElementById("submit-btn").innerHTML =
           "welcome" +
           window.location.replace(
-            "https://coleworld.herokuapp.com/login.html"
+            "http://localhost:2121/login.html"
           );
       }
     </script>
