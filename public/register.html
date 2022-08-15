@@ -186,6 +186,18 @@
         />
         </div>
       <div class="row">
+        <label class="mt-3">User type:</label>
+        <div class="col-12">
+      <select id="user-type">
+        <option>
+          user
+        </option>
+        <option>
+admin
+        </option>
+      </select>
+        </div>
+      <div class="row">
         <label class="mt-3">Password:</label>
         <div class="col-12">
         <div class="d-flex gap-5">
@@ -248,7 +260,7 @@
       let email = document.getElementById("email").value;
       async function Register(e) {
         e.preventDefault();
-        fetch("http://localhost:2121/users/register", {
+        fetch("https://coleworld.herokuapp.com/users/register", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -260,10 +272,15 @@
             address: "786 radio street",
             country: "SA",
             phone: "021454545",
-            user_type: "user"
+            user_type: document.getElementById("user-type").value
           }),
         }).then((res) => res.json());
         alert("Your registered successfully");
+         document.getElementById("submit-btn").innerHTML =
+          "welcome" +
+          window.location.replace(
+            "https://coleworld.herokuapp.com/login.html"
+          );
       }
     </script>
   </body>
