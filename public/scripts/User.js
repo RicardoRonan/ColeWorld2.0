@@ -1,4 +1,4 @@
-let user = null;
+// let user = null;
 let password = document.getElementById("password").value;
 let email = document.getElementById("email").value;
 async function Login(e) {
@@ -34,20 +34,8 @@ async function Login(e) {
           console.log(user);
         });
     });
-  // localStorage.setItem("user-details", JSON.stringify(users));
 
-  // document.getElementById("submit-btn").innerHTML =
-  //   "welcome" +
-  //   window.location.replace(
-  //     "https://coleworld.herokuapp.com/albums.html"
-  //   );
+  document.getElementById("submit-btn").innerHTML =
+    "welcome" +
+    window.location.replace("https://coleworld.herokuapp.com/albums.html");
 }
-const id = user.user_id;
-
-fetch("https://coleworld.herokuapp.com/users/" + id, {
-  method: "GET",
-})
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
-  });

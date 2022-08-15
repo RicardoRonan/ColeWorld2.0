@@ -232,13 +232,13 @@
                 console.log(user);
               });
           });
-        // localStorage.setItem("user-details", JSON.stringify(users));
+        localStorage.setItem("user-details", JSON.stringify(users));
 
-        // document.getElementById("submit-btn").innerHTML =
-        //   "welcome" +
-        //   window.location.replace(
-        //     "https://coleworld.herokuapp.com/albums.html"
-        //   );
+        document.getElementById("submit-btn").innerHTML =
+          "welcome" +
+          window.location.replace(
+            "https://coleworld.herokuapp.com/albums.html"
+          );
       }
       const id = user.user_id;
 
