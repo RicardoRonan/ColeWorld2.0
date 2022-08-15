@@ -90,3 +90,5 @@ function getOneAlbum(id) {
     });
   console.log(id);
 }
+// Cart
+let cart = [];

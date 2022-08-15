@@ -135,7 +135,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="offcanvas-body">Items brought</div>
+            <div class="offcanvas-body">Items bought</div>
           </div>
 
           <!-- **************************************************************************************************** -->
@@ -196,6 +196,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      let user = null;
       let password = document.getElementById("password").value;
       let email = document.getElementById("email").value;
       async function Login(e) {
@@ -226,7 +227,10 @@
               },
             })
               .then((response) => response.json())
-              .then((json) => console.log(json));
+              .then((json) => {
+                user = json.user;
+                console.log(user);
+              });
           });
 
         // document.getElementById("submit-btn").innerHTML =
@@ -234,6 +238,12 @@
         //   window.location.replace(
         //     "http://localhost:2121/albums.html"
         //   );
+
+        document.getElementById("submit-btn").innerHTML =
+          "welcome" +
+          window.location.replace(
+            "https://coleworld.herokuapp.com/albums.html"
+          );
       }
     </script>
   </body>
