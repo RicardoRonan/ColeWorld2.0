@@ -272,14 +272,25 @@
     ></script>
 
     <script>
+      let cart = [];
       async function addtoCart(e) {
         e.preventDefault();
-        fetch("https://coleworld.herokuapp.com/users/:id/cart", {
+        fetch("https://coleworld.herokuapp.com/users/" + users_id + "cart", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({}),
+          body: JSON.stringify({
+            album_id: album_id,
+            album_name: album_name,
+            artists: artists,
+            price: price,
+            descriptions: descriptions,
+            image: image,
+            release_date: release_date,
+            quantity: quantity,
+            tracklist: tracklist,
+          }),
         }).then((res) => console.log(res.json()));
       }
     </script>
