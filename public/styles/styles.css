@@ -183,6 +183,7 @@ h1 {
 .registration_form {
   flex-direction: column;
   width: fit-content;
+  align-items: center;
 }
 
 #register {
