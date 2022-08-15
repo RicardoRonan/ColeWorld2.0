@@ -200,7 +200,7 @@
       let email = document.getElementById("email").value;
       async function Login(e) {
         e.preventDefault();
-        fetch("http://localhost:2121/users/login", {
+        fetch("https://coleworld.herokuapp.com/login", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -217,7 +217,7 @@
             //  Verify Route needs to run
             // To decode the token
 
-            fetch("http://localhost:2121/users/users/verify", {
+            fetch("https://coleworld.herokuapp.com/users/users/verify", {
               method: "GET",
 
               headers: {

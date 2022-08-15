@@ -271,7 +271,7 @@
     <script>
       async function addtoCart(e) {
         e.preventDefault();
-        fetch("http://localhost:2121/users/:id/cart", {
+        fetch("https://coleworld.herokuapp.com/users/:id/cart", {
           method: "POST",
           headers: {
             "Content-type": "application/json",

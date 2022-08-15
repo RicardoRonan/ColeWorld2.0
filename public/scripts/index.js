@@ -2,7 +2,7 @@
 
 let albums = [];
 const uContainer = document.querySelector(".albums_div");
-fetch("http://localhost:2121/albums")
+fetch("https://coleworld.herokuapp.com/albums")
   .then((res) => res.json())
   .then((data) => {
     albums = data;
@@ -36,7 +36,7 @@ function showalbums(albums) {
 // Getting One Album
 
 function getOneAlbum(id) {
-  fetch(`http://localhost:2121/albums/${id}`, {
+  fetch(`https://coleworld.herokuapp.com/albums/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
