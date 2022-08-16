@@ -104,7 +104,7 @@ router.get("/:id/cart", (req, res) => {
     res.send("empty");
   }
 });
-
+// add to cart
 router.post("/:id/cart", (req, res) => {
   let cart = [];
   con.query(
@@ -112,7 +112,7 @@ router.post("/:id/cart", (req, res) => {
     (err, result) => {
       if (err) throw err;
       user_id = result[0].user_id;
-      let item = {
+      let album = {
         user_id: req.body.user_id,
         album_name: req.body.album_name,
         artists: req.body.artists,
@@ -123,10 +123,10 @@ router.post("/:id/cart", (req, res) => {
         quantity: req.body.quantity,
         tracklist: req.body.tracklist,
       };
+      cart.push(album);
       if (result[0].cart !== "") {
         cart = JSON.parse(result[0].cart);
       }
-      cart.push(item);
       con.query(
         `UPDATE users SET cart = ? WHERE user_id = ${req.params.id}`,
         JSON.stringify(cart),

@@ -23,7 +23,7 @@ function showalbums(albums) {
             <button onclick="getOneAlbum(${id})">
               Show Details
             </button>
-            <button id="add-btn" onclick="addtoCart(event)" >
+            <button id="add-btn" onclick="addtoCart(${id})" >
               Add to cart
             </button>
           </div>
@@ -88,4 +88,49 @@ function getOneAlbum(id) {
       document.write(html);
     });
   console.log(id);
+}
+// cart
+
+function getAlbum(id) {
+  fetch(`http://localhost:2121/album/${id}`)
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}
+
+function addtoCart(id) {
+  fetch(`http://localhost:2121/users/${id}/cart/`, {
+    method: "POST",
+    body: JSON.stringify({}),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      albums = data;
+      console.log(data);
+    });
+  console.log("added to cart successfully");
+}
+
+const cartContainer = document.querySelector("#cartItems");
+function showcartItem(id) {
+  fetch(`http://localhost:2121/users/${id}/cart`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
+}
+function showCart(albums) {
+  cartContainer.innerHTML = "";
+  albums.forEach((album) => {
+    id = album.album_id;
+    cartContainer.innerHTML += `
+      <div class="card">
+      <h1>${album_name}</h1>
+
+      </div>
+      
+    `;
+  });
 }
