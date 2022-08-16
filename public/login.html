@@ -199,7 +199,7 @@
       let email = document.getElementById("email").value;
       async function Login(e) {
         e.preventDefault();
-        fetch("https://coleworld.herokuapp.com/login", {
+        fetch("https://coleworld.herokuapp.com/users/login", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -233,15 +233,13 @@
 
         // document.getElementById("submit-btn").innerHTML =
         //   "welcome" +
-        //   window.location.replace(
-        //     "http://localhost:2121/albums.html"
-        //   );
+        //   window.location.replace("http://localhost:2121/albums.html");
 
-        document.getElementById("submit-btn").innerHTML =
-          "welcome" +
-          window.location.replace(
-            "https://coleworld.herokuapp.com/albums.html"
-          );
+        // document.getElementById("submit-btn").innerHTML =
+        //   "welcome" +
+        //   window.location.replace(
+        //     "https://coleworld.herokuapp.com/albums.html"
+        //   );
         function toggleNav() {
           document
             .getElementsByClassName("navbar-links")[0]

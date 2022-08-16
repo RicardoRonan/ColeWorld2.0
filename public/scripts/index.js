@@ -92,10 +92,11 @@ function getOneAlbum(id) {
 // cart
 
 function getAlbum(id) {
-  fetch(`http://localhost:2121/album/${id}`)
+  fetch(`http://localhost:2121/albums/${id}`)
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((data) => data);
 }
+getAlbum(1);
 
 function addtoCart(id) {
   fetch(`http://localhost:2121/users/${id}/cart/`, {
@@ -119,18 +120,13 @@ function showcartItem(id) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-    });
-}
-function showCart(albums) {
-  cartContainer.innerHTML = "";
-  albums.forEach((album) => {
-    id = album.album_id;
-    cartContainer.innerHTML += `
+      cartContainer.innerHTML = "";
+      albums.forEach((album) => {
+        cartContainer.innerHTML += `
       <div class="card">
-      <h1>${album_name}</h1>
-
+      <h1>${album.album_name}</h1>
       </div>
-      
     `;
-  });
+      });
+    });
 }
