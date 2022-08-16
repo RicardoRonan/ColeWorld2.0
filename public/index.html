@@ -14,15 +14,17 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/53a149f81a.js" crossorigin="anonymous"></script>
 
     <!-- CSS LINK -->
     <!-- ************************************************* -->
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/navbar.css">
   </head>
-  <body>
+  <body id="home">
     <!-- <div id="albums"></div> -->
 
-  </body>
+
   <script>
     let albums = [];
     const uContainer = document.querySelector("#albums");
@@ -51,28 +53,21 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid navigation">
         <div>
-          <a class="navbar-brand" href="#"
-            ><img src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png" class="logo" alt=""
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
+         
+            <button id="nav-btn" onclick='toggleNav()'>
+           <i class="fa-solid fa-bars"></i>
           </button>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-links d-flex align-items-center">
+            <a class="navbar-brand" href="#"
+             ><img src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png" class="logo" alt=""
+           /></a>
             <li class="nav-item">
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="#"
+                href="./index.html"
                 style="color: white"
                 >HOME</a
               >
@@ -91,28 +86,28 @@
             <li class="nav-item">
               <a class="nav-link" href="./register.html" style="color: white">REGISTER</a>
             </li>
+            <div class="user d-flex gap-2 pt-2 d-flex align-items-center">
+              <box-icon
+                type="solid"
+                name="user-circle"
+                style="background-color: white"
+                class="rounded user-button"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasUserDetails"
+                aria-controls="offcanvasRight"
+              ></box-icon>
+              <box-icon
+                name="cart-add"
+                style="background-color: white"
+                class="rounded"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+              ></box-icon>
+            </div>
           </ul>
-          <div class="user d-flex gap-2">
-            <box-icon
-              type="solid"
-              name="user-circle"
-              style="background-color: white"
-              class="rounded user-button"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasUserDetails"
-              aria-controls="offcanvasRight"
-            ></box-icon>
-            <box-icon
-              name="cart-add"
-              style="background-color: white"
-              class="rounded"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight"
-            ></box-icon>
-          </div>
 
           <!--USER DETAILS-->
           <!-- ******************************************************************************************* -->
@@ -175,79 +170,90 @@
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img
-              src="https://media.giphy.com/media/MMh4RN5LnUSjkpuOTs/giphy.gif"
-              class="d-block"
-              alt="..."
-            />
+            <div class="box">
+              <img
+                src="https://media.giphy.com/media/MMh4RN5LnUSjkpuOTs/giphy.gif"
+                class="d-block"
+                alt="..."
+              />
+            </div>
             <div class="title-cont">
               <h1 id="amari" class="gap-3">Eeny, meeny, miny, moe
                 <a href="./albums.html">
-                  <button type="button" class="btn">View Albums</button>
+                  <button type="button" id="caro-btn" class="btn">View Albums</button>
                 </a>
               </h1>
             </div>
           </div>
           <div class="carousel-item">
-            <img
-              src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ftenor.com%2Fview%2Fmoney-cash-flow-count-gif-12963820"
-              class="d-block"
-              alt="..."
-            />
+            <div class="box">
+              <img
+                src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ftenor.com%2Fview%2Fmoney-cash-flow-count-gif-12963820"
+                class="d-block"
+                alt="..."
+              />
+            </div>
             <div class="title-cont">
               <h1 id="count_it">
                 Can't take it when you die <br />
                 But you can't live without it
                 <a href="https://www.youtube.com/watch?v=vUTI4bPdlgE" target="_blank">
-                  <button type="button" class="btn">Watch the video - ATM</button>
+                  <button type="button" id="caro-btn" class="btn">Watch the video - ATM</button>
                 </a>
               </h1>
             </div>
           </div>
           <div class="carousel-item">
-            <img
-              src="http://itsbizkit.com/wp-content/uploads/2019/10/down.gif"
-              class="d-block"
-              alt="..."
-            />
+            <div class="box">
+              <img
+                src="http://itsbizkit.com/wp-content/uploads/2019/10/down.gif"
+                class="d-block"
+                alt="..."
+              />
+            </div>
             <div class="title-cont">
               <h1 id="down_bad">
                 All hail King Cole <br />
                 First of his name long may he reign
                 <a href="https://www.youtube.com/watch?v=lIM1hejXzhw" target="_blank">
-                  <button type="button" class="btn">Watch the video - down bad</button>
+                  <button type="button" id="caro-btn" class="btn">Watch the video - down bad</button>
                 </a>
               </h1>
             </div>
           </div>
           <div class="carousel-item">
-            <img
-              src="https://64.media.tumblr.com/eed664251062c2ac5c13740aa8451f89/8e7a44f024c76703-81/s540x810/75232fe2dd031e2d24280b9e1ba27f9ae0df3922.gifv"
-              class="d-block"
-              alt="..."
-            />
+            <div class="box">
+              <img
+                src="https://64.media.tumblr.com/eed664251062c2ac5c13740aa8451f89/8e7a44f024c76703-81/s540x810/75232fe2dd031e2d24280b9e1ba27f9ae0df3922.gifv"
+                class="d-block"
+                alt="..."
+              />
+
+            </div>
             <div class="title-cont">
               <h1 id="amari2">
                 I never fall out with a bro <br />
                 Hate when your family turn into foe
                 <a href="https://www.youtube.com/watch?v=w3333Fo6ufY" target="_blank">
-                  <button type="button" class="btn">Watch the video - Amari</button>
+                  <button type="button" id="caro-btn" class="btn">Watch the video - Amari</button>
                 </a>
               </h1>
             </div>
           </div>
           <div class="carousel-item">
-            <img
-              src="https://media2.giphy.com/media/evT2VzCWfhI2HLnKTs/giphy.gif"
-              class="d-block"
-              alt="..."
-            />
+            <div class="box">
+              <img
+                src="https://media2.giphy.com/media/evT2VzCWfhI2HLnKTs/giphy.gif"
+                class="d-block"
+                alt="..."
+              />
+            </div>
             <div class="title-cont">
               <h1 id="gang">
                 I be looking ahead of me <br />
                 Only concern is the legacy
                 <a href="https://www.youtube.com/watch?v=_8YM1Y9VzQs" target="_blank">
-                  <button type="button" class="btn">Watch the video - Aretha</button>
+                  <button type="button"  id="caro-btn" class="btn">Watch the video - Aretha</button>
                 </a>
               </h1>
             </div>
@@ -255,6 +261,7 @@
           </div>
         </div>
       </div>
+      <button type="button" id="caro1" class="btn">View Albums</button>
     </div>
     <script
     src="https://kit.fontawesome.com/5f5e9bd818.js"
@@ -266,5 +273,11 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function toggleNav() {
+  document.getElementsByClassName("navbar-links")[0].classList.toggle("active");
+}
+
+    </script>
   </body>
 </html>

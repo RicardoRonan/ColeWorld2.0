@@ -1,0 +1,36 @@
+.navbar-links {
+  display: flex;
+  list-style-type: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+  background: rgb(40, 40, 39);
+  padding: 8px;
+}
+
+#nav-btn {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  #nav-btn {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+  }
+  .navbar-links {
+    top: -100%;
+    transition: all 0.5s linear;
+    /*     width: 100; */
+    flex-direction: column;
+  }
+
+  .navbar-links.active {
+    top: 0;
+  }
+}

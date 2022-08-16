@@ -13,10 +13,15 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/53a149f81a.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- CSS LINK -->
     <!-- ************************************************* -->
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
     <style>
       #albums {
         width: 100%;
@@ -126,26 +131,18 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid navigation">
         <div>
-          <a class="navbar-brand" href="./index.html"
-            ><img
-              src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png"
-              class="logo"
-              alt=""
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
+          <button id="nav-btn" onclick="toggleNav()">
+            <i class="fa-solid fa-bars"></i>
           </button>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-links d-flex align-items-center">
+            <a class="navbar-brand" href="#"
+              ><img
+                src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png"
+                class="logo"
+                alt=""
+            /></a>
             <li class="nav-item">
               <a
                 class="nav-link active"
@@ -156,7 +153,9 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white">ALBUMS</a>
+              <a class="nav-link" href="./albums.html" style="color: white"
+                >ALBUMS</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./artists.html" style="color: white"
@@ -173,38 +172,36 @@
                 >REGISTER</a
               >
             </li>
-          </ul>
-          <div class="user d-flex gap-2">
-            <box-icon
-              type="solid"
-              name="user-circle"
-              style="background-color: white"
-              class="rounded user-button"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasUserDetails"
-              aria-controls="offcanvasRight"
-            ></box-icon>
-            <box-icon
-              name="cart-add"
-              style="background-color: white"
-              class="rounded"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight"
-            ></box-icon>
-            <div>
-              <input type="checkbox" class="checkbox" id="checkbox" />
-              <label for="checkbox" class="label">
-                <!-- fontawesome sun icon -->
-                <i class="fa-solid fa-sun"></i>
-                <!-- fontawesome moon icon -->
-                <i class="fa-solid fa-moon"></i>
-                <div class="ball"></div>
-              </label>
+            <div class="user d-flex gap-2 pt-2 d-flex align-items-center">
+              <box-icon
+                type="solid"
+                name="user-circle"
+                style="background-color: white"
+                class="rounded user-button"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasUserDetails"
+                aria-controls="offcanvasRight"
+              ></box-icon>
+              <box-icon
+                name="cart-add"
+                style="background-color: white"
+                class="rounded"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+              ></box-icon>
             </div>
-          </div>
+            <input type="checkbox" class="checkbox" id="checkbox" />
+            <label for="checkbox" class="label">
+              <!-- fontawesome sun icon -->
+              <i class="fa-solid fa-sun"></i>
+              <!-- fontawesome moon icon -->
+              <i class="fa-solid fa-moon"></i>
+              <div class="ball"></div>
+            </label>
+          </ul>
 
           <!--USER DETAILS-->
           <!-- ******************************************************************************************* -->
@@ -223,10 +220,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="offcanvas-body">
-              USER
-              <div id="user-details"></div>
-            </div>
+            <div class="offcanvas-body">USER</div>
           </div>
 
           <!-- ********************************************************************************************** -->
@@ -251,7 +245,7 @@
             <div class="offcanvas-body">Items brought</div>
           </div>
 
-          <!-- ********************************************************************************************** -->
+          <!-- **************************************************************************************************** -->
         </div>
       </div>
     </nav>
@@ -274,23 +268,37 @@
     <script>
       async function addtoCart(e) {
         e.preventDefault();
-        fetch("https://coleworld.herokuapp.com/users/:id/cart", {
+        fetch(`https://coleworld.herokuapp.com/users/${req.params.id}/cart`, {
           method: "POST",
           headers: {
             "Content-type": "application/json",
           },
-          body: JSON.stringify({}),
+          body: JSON.stringify({
+            album_id: album_id,
+            album_name: album_name,
+            artists: artists,
+            price: price,
+            descriptions: descriptions,
+            image: image,
+            release_date: release_date,
+            quantity: quantity,
+            tracklist: tracklist,
+          }),
         }).then((res) => console.log(res.json()));
       }
     </script>
-    <script src="./scripts/index.js"></script>
     <script>
       const checkbox = document.getElementById("checkbox");
 
       checkbox.addEventListener("change", () => {
         document.body.classList.toggle("dark");
       });
+      function toggleNav() {
+        document
+          .getElementsByClassName("navbar-links")[0]
+          .classList.toggle("active");
+      }
     </script>
-    <script src="../public/scripts/User.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

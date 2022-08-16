@@ -14,10 +14,15 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/53a149f81a.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- CSS LINK -->
     <!-- ************************************************* -->
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
   </head>
   <body style="background-color: black">
     <header>
@@ -26,26 +31,18 @@
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid navigation">
           <div>
-            <a class="navbar-brand" href="#"
-              ><img
-                src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png"
-                class="logo"
-                alt=""
-            /></a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
+            <button id="nav-btn" onclick="toggleNav()">
+              <i class="fa-solid fa-bars"></i>
             </button>
           </div>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-links d-flex align-items-center">
+              <a class="navbar-brand" href="#"
+                ><img
+                  src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png"
+                  class="logo"
+                  alt=""
+              /></a>
               <li class="nav-item">
                 <a
                   class="nav-link active"
@@ -71,32 +68,33 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" style="color: white">REGISTER</a>
+                <a class="nav-link" href="./register.html" style="color: white"
+                  >REGISTER</a
+                >
               </li>
+              <div class="user d-flex gap-2 pt-2 d-flex align-items-center">
+                <box-icon
+                  type="solid"
+                  name="user-circle"
+                  style="background-color: white"
+                  class="rounded user-button"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasUserDetails"
+                  aria-controls="offcanvasRight"
+                ></box-icon>
+                <box-icon
+                  name="cart-add"
+                  style="background-color: white"
+                  class="rounded"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                ></box-icon>
+              </div>
             </ul>
 
-            <div class="user d-flex gap-2">
-              <box-icon
-                type="solid"
-                name="user-circle"
-                style="background-color: white"
-                class="rounded user-button"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasUserDetails"
-                aria-controls="offcanvasRight"
-              ></box-icon>
-              <box-icon
-                name="cart-add"
-                style="background-color: white"
-                class="rounded"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"
-              ></box-icon>
-            </div>
-  
             <!--USER DETAILS-->
             <!-- ******************************************************************************************* -->
             <div
@@ -116,9 +114,9 @@
               </div>
               <div class="offcanvas-body">USER</div>
             </div>
-  
+
             <!-- ********************************************************************************************** -->
-  
+
             <!--SHOPPING CART -->
             <!-- ******************************************************************************************* -->
             <div
@@ -138,9 +136,8 @@
               </div>
               <div class="offcanvas-body">Items brought</div>
             </div>
-  
-            <!-- **************************************************************************************************** -->
 
+            <!-- **************************************************************************************************** -->
           </div>
         </div>
       </nav>
@@ -153,39 +150,39 @@
         class="pt-5 d-flex registration_form"
         onsubmit="Register(event)"
       >
-      <div class="row">
-        <label>Full Name:</label>
-        <div class="col-12">
-        <div class="d-flex gap-5">
-          <input
-            type="text"
-            name="full_name"
-            id="full_name"
-            placeholder="FullName"
-            class="rounded p-1"
-          />
-          <!-- <input
+        <div class="row">
+          <label>Full Name:</label>
+          <div class="col-12">
+            <div class="d-flex gap-5">
+              <input
+                type="text"
+                name="full_name"
+                id="full_name"
+                placeholder="FullName"
+                class="rounded p-1"
+              />
+              <!-- <input
             type="text"
             name="last_name"
             id="last_name"
             placeholder="Last Name"
             class="rounded p-1"
           /> -->
-        </div>
-        </div>
-      <div class="row">
-        <label class="mt-3">Email:</label>
-        <div class="col-12">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="YourName@gmail.com"
-          required
-          class="rounded p-1"
-        />
-        </div>
-      <!-- <div class="row">
+            </div>
+          </div>
+          <div class="row">
+            <label class="mt-3">Email:</label>
+            <div class="col-12">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="YourName@gmail.com"
+                required
+                class="rounded p-1"
+              />
+            </div>
+            <!-- <div class="row">
         <label class="mt-3">User type:</label>
         <div class="col-12">
       <select id="user-type">
@@ -197,53 +194,42 @@ admin
         </option>
       </select>
         </div> -->
-      <div class="row">
-        <label class="mt-3">Password:</label>
-        <div class="col-12">
-        <div class="d-flex gap-5">
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Your password"
-            required
-            class="rounded p-1"
-          />
-
-       
-        </div>
-        </div>
-        <div class="row">
-          <div class="col-12 mt-4">
-               <input
-            type="password"
-            name="pswd_confirm"
-            id="pswd_confirm"
-            placeholder="Confrim password"
-            required
-            class="rounded p-1"
-          />
+            <div class="row">
+              <label class="mt-3">Password:</label>
+              <div class="col-12">
+                <div class="d-flex gap-5">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Your password"
+                    required
+                    class="rounded p-1"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 mt-4">
+                  <input
+                    type="password"
+                    name="pswd_confirm"
+                    id="pswd_confirm"
+                    placeholder="Confrim password"
+                    required
+                    class="rounded p-1"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="mt-5 rounded btn-register p-1">
+                  Register
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-        
-        <!-- <label class="mt-3">Country:</label>
-        <select name="country" id="country" class="rounded p-1">
-          <option value="England">England</option>
-          <option value="Germany">Germany</option>
-          <option value="Nigeria">Nigeria</option>
-          <option value="SA">South Africa</option>
-          <option value="Spain">Spain</option>
-          <option value="USA">United States of America</option>
-        </select> -->
-      <div class="row">
-        <div class="col-12">
-          <button type="submit" class="mt-5 rounded btn-register p-1">
-            Register
-          </button>
-
-        </div>
-      </div>
       </form>
     </section>
 
@@ -272,15 +258,18 @@ admin
             address: "786 radio street",
             country: "SA",
             phone: "021454545",
-            user_type:"user"
+            user_type: "user",
           }),
         }).then((res) => res.json());
         alert("Your registered successfully");
-         document.getElementById("submit-btn").innerHTML =
+        document.getElementById("submit-btn").innerHTML =
           "welcome" +
-          window.location.replace(
-            "https://coleworld.herokuapp.com/login.html"
-          );
+          window.location.replace("https://coleworld.herokuapp.com/login.html");
+      }
+      function toggleNav() {
+        document
+          .getElementsByClassName("navbar-links")[0]
+          .classList.toggle("active");
       }
     </script>
   </body>
