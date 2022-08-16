@@ -14,122 +14,133 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <script src="https://kit.fontawesome.com/53a149f81a.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/53a149f81a.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- CSS LINK -->
     <!-- ************************************************* -->
     <link rel="stylesheet" href="./styles/styles.css" />
-     <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/navbar.css" />
   </head>
   <body style="background-color: black">
     <header>
       <!-- NAVBAR -->
       <!-- ******************************************************** -->
-         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid navigation">
-        <div>
-         
-            <button id="nav-btn" onclick='toggleNav()'>
-          <i class="fa-solid fa-bars"></i>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-links d-flex align-items-center">
-            <a class="navbar-brand" href="#"
-             ><img src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png" class="logo" alt=""
-           /></a>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="./index.html"
-                style="color: white"
-                >HOME</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./albums.html" style="color: white">ALBUMS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./artists.html" style="color: white"
-                >ARTISTS</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./login.html" style="color: white">LOGIN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./register.html" style="color: white">REGISTER</a>
-            </li>
-            <div class="user d-flex gap-2 pt-2 d-flex align-items-center">
-              <box-icon
-                type="solid"
-                name="user-circle"
-                style="background-color: white"
-                class="rounded user-button"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasUserDetails"
-                aria-controls="offcanvasRight"
-              ></box-icon>
-              <box-icon
-                name="cart-add"
-                style="background-color: white"
-                class="rounded"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"
-              ></box-icon>
-            </div>
-          </ul>
-
-          <!--USER DETAILS-->
-          <!-- ******************************************************************************************* -->
-          <div
-            class="offcanvas offcanvas-end"
-            tabindex="-1"
-            id="offcanvasUserDetails"
-            aria-labelledby="offcanvasRightLabel"
-          >
-            <div class="offcanvas-header">
-              <h5 id="offcanvasRightLabel">USER DETAILS</h5>
-              <button
-                type="button"
-                class="btn-close text-reset"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="offcanvas-body">USER</div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid navigation">
+          <div>
+            <button id="nav-btn" onclick="toggleNav()">
+              <i class="fa-solid fa-bars"></i>
+            </button>
           </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-links d-flex align-items-center">
+              <a class="navbar-brand" href="#"
+                ><img
+                  src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png"
+                  class="logo"
+                  alt=""
+              /></a>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./index.html"
+                  style="color: white"
+                  >HOME</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./albums.html" style="color: white"
+                  >ALBUMS</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./artists.html" style="color: white"
+                  >ARTISTS</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./login.html" style="color: white"
+                  >LOGIN</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./register.html" style="color: white"
+                  >REGISTER</a
+                >
+              </li>
+              <div class="user d-flex gap-2 pt-2 d-flex align-items-center">
+                <box-icon
+                  type="solid"
+                  name="user-circle"
+                  style="background-color: white"
+                  class="rounded user-button"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasUserDetails"
+                  aria-controls="offcanvasRight"
+                ></box-icon>
+                <box-icon
+                  name="cart-add"
+                  style="background-color: white"
+                  class="rounded"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#offcanvasRight"
+                  aria-controls="offcanvasRight"
+                ></box-icon>
+              </div>
+            </ul>
 
-          <!-- ********************************************************************************************** -->
-
-          <!--SHOPPING CART -->
-          <!-- ******************************************************************************************* -->
-          <div
-            class="offcanvas offcanvas-end"
-            tabindex="-1"
-            id="offcanvasRight"
-            aria-labelledby="offcanvasRightLabel"
-          >
-            <div class="offcanvas-header">
-              <h5 id="offcanvasRightLabel">SHOPPING CART</h5>
-              <button
-                type="button"
-                class="btn-close text-reset"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
+            <!--USER DETAILS-->
+            <!-- ******************************************************************************************* -->
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasUserDetails"
+              aria-labelledby="offcanvasRightLabel"
+            >
+              <div class="offcanvas-header">
+                <h5 id="offcanvasRightLabel">USER DETAILS</h5>
+                <button
+                  type="button"
+                  class="btn-close text-reset"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">USER</div>
             </div>
-            <div class="offcanvas-body">Items brought</div>
-          </div>
 
-          <!-- **************************************************************************************************** -->
+            <!-- ********************************************************************************************** -->
+
+            <!--SHOPPING CART -->
+            <!-- ******************************************************************************************* -->
+            <div
+              class="offcanvas offcanvas-end"
+              tabindex="-1"
+              id="offcanvasRight"
+              aria-labelledby="offcanvasRightLabel"
+            >
+              <div class="offcanvas-header">
+                <h5 id="offcanvasRightLabel">SHOPPING CART</h5>
+                <button
+                  type="button"
+                  class="btn-close text-reset"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="offcanvas-body">Items brought</div>
+            </div>
+
+            <!-- **************************************************************************************************** -->
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
     </header>
 
     <section id="register" class="container pt-5">
@@ -139,39 +150,39 @@
         class="pt-5 d-flex registration_form"
         onsubmit="Register(event)"
       >
-      <div class="row">
-        <label>Full Name:</label>
-        <div class="col-12">
-        <div class="d-flex gap-5">
-          <input
-            type="text"
-            name="full_name"
-            id="full_name"
-            placeholder="FullName"
-            class="rounded p-1"
-          />
-          <!-- <input
+        <div class="row">
+          <label>Full Name:</label>
+          <div class="col-12">
+            <div class="d-flex gap-5">
+              <input
+                type="text"
+                name="full_name"
+                id="full_name"
+                placeholder="FullName"
+                class="rounded p-1"
+              />
+              <!-- <input
             type="text"
             name="last_name"
             id="last_name"
             placeholder="Last Name"
             class="rounded p-1"
           /> -->
-        </div>
-        </div>
-      <div class="row">
-        <label class="mt-3">Email:</label>
-        <div class="col-12">
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="YourName@gmail.com"
-          required
-          class="rounded p-1"
-        />
-        </div>
-      <!-- <div class="row">
+            </div>
+          </div>
+          <div class="row">
+            <label class="mt-3">Email:</label>
+            <div class="col-12">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="YourName@gmail.com"
+                required
+                class="rounded p-1"
+              />
+            </div>
+            <!-- <div class="row">
         <label class="mt-3">User type:</label>
         <div class="col-12">
       <select id="user-type">
@@ -183,53 +194,42 @@ admin
         </option>
       </select>
         </div> -->
-      <div class="row">
-        <label class="mt-3">Password:</label>
-        <div class="col-12">
-        <div class="d-flex gap-5">
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Your password"
-            required
-            class="rounded p-1"
-          />
-
-       
-        </div>
-        </div>
-        <div class="row">
-          <div class="col-12 mt-4">
-               <input
-            type="password"
-            name="pswd_confirm"
-            id="pswd_confirm"
-            placeholder="Confrim password"
-            required
-            class="rounded p-1"
-          />
+            <div class="row">
+              <label class="mt-3">Password:</label>
+              <div class="col-12">
+                <div class="d-flex gap-5">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Your password"
+                    required
+                    class="rounded p-1"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 mt-4">
+                  <input
+                    type="password"
+                    name="pswd_confirm"
+                    id="pswd_confirm"
+                    placeholder="Confrim password"
+                    required
+                    class="rounded p-1"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="mt-5 rounded btn-register p-1">
+                  Register
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-        
-        <!-- <label class="mt-3">Country:</label>
-        <select name="country" id="country" class="rounded p-1">
-          <option value="England">England</option>
-          <option value="Germany">Germany</option>
-          <option value="Nigeria">Nigeria</option>
-          <option value="SA">South Africa</option>
-          <option value="Spain">Spain</option>
-          <option value="USA">United States of America</option>
-        </select> -->
-      <div class="row">
-        <div class="col-12">
-          <button type="submit" class="mt-5 rounded btn-register p-1">
-            Register
-          </button>
-
-        </div>
-      </div>
       </form>
     </section>
 
@@ -258,19 +258,19 @@ admin
             address: "786 radio street",
             country: "SA",
             phone: "021454545",
-            user_type:"user"
+            user_type: "user",
           }),
         }).then((res) => res.json());
         alert("Your registered successfully");
-         document.getElementById("submit-btn").innerHTML =
+        document.getElementById("submit-btn").innerHTML =
           "welcome" +
-          window.location.replace(
-            "https://coleworld.herokuapp.com/login.html"
-          );
+          window.location.replace("https://coleworld.herokuapp.com/login.html");
       }
-            function toggleNav() {
-  document.getElementsByClassName("navbar-links")[0].classList.toggle("active");
-}
+      function toggleNav() {
+        document
+          .getElementsByClassName("navbar-links")[0]
+          .classList.toggle("active");
+      }
     </script>
   </body>
 </html>
