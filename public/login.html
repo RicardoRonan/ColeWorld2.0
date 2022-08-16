@@ -193,8 +193,10 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
     <script>
-      let user = null;
+      let user = localStorage.getItem("user");
+      console.log(user);
       let password = document.getElementById("password").value;
       let email = document.getElementById("email").value;
       async function Login(e) {
@@ -228,18 +230,10 @@
               .then((json) => {
                 user = json.user;
                 console.log(user);
+                localStorage.setItem("user", token);
               });
           });
 
-        // document.getElementById("submit-btn").innerHTML =
-        //   "welcome" +
-        //   window.location.replace("http://localhost:2121/albums.html");
-
-        // document.getElementById("submit-btn").innerHTML =
-        //   "welcome" +
-        //   window.location.replace(
-        //     "https://coleworld.herokuapp.com/albums.html"
-        //   );
         function toggleNav() {
           document
             .getElementsByClassName("navbar-links")[0]

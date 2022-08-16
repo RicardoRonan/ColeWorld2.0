@@ -26,6 +26,7 @@
 
 
   <script>
+          let user = localStorage.getItem("user");
     let albums = [];
     const uContainer = document.querySelector("#albums");
     fetch("https://coleworld.herokuapp.com/albums")

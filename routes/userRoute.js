@@ -124,7 +124,7 @@ router.post("/:id/cart", (req, res) => {
         tracklist: req.body.tracklist,
       };
       cart.push(album);
-      if (result[0].cart !== "") {
+      if (result[0].cart !== "null") {
         cart = JSON.parse(result[0].cart);
       }
       con.query(

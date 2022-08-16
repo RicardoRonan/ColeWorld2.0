@@ -1,3 +1,5 @@
+let user = localStorage.getItem("user");
+console.log(user);
 // Getting All Albums
 
 let albums = [];
@@ -90,28 +92,39 @@ function getOneAlbum(id) {
   console.log(id);
 }
 // cart
+fetch("https://coleworld.herokuapp.com/users/users/verify", {
+  method: "GET",
 
-function getAlbum(id) {
-  fetch(`http://localhost:2121/albums/${id}`)
-    .then((res) => res.json())
-    .then((data) => data);
-}
-getAlbum(1);
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+    "x-auth-token": data.token,
+  },
+})
+  .then((response) => response.json())
+  .then((json) => {
+    user = json.user;
+    console.log(user);
+    localStorage.setItem("user", token);
+  });
 
 function addtoCart(id) {
-  fetch(`http://localhost:2121/users/${id}/cart/`, {
-    method: "POST",
-    body: JSON.stringify({}),
-    headers: {
-      "Content-Type": "application/json; charset=UTF-8",
-    },
-  })
+  fetch(`http://localhost:2121/albums/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      albums = data;
       console.log(data);
+      fetch(`http://localhost:2121/users/${id}/cart/`, {
+        method: "POST",
+        body: JSON.stringify(data[0]),
+        headers: {
+          "Content-Type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          albums = data;
+          console.log(data);
+        });
     });
-  console.log("added to cart successfully");
 }
 
 const cartContainer = document.querySelector("#cartItems");
