@@ -4,7 +4,7 @@ console.log(user);
 
 let albums = [];
 const uContainer = document.querySelector(".albums_div");
-fetch("http://localhost:2121/albums")
+fetch("https://coleworld.herokuapp.com/albums")
   .then((res) => res.json())
   .then((data) => {
     albums = data;
@@ -38,7 +38,7 @@ function showalbums(albums) {
 // Getting One Album
 
 function getOneAlbum(id) {
-  fetch(`http://localhost:2121/albums/${id}`, {
+  fetch(`https://coleworld.herokuapp.com/albums/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
@@ -62,7 +62,7 @@ function getOneAlbum(id) {
             <p>Tracklist: ${albums[0].tracklist} tracks</p>
             <p>Release Date: ${albums[0].release_date}</p>
             <h4 style="font-size: 1.5rem">R ${albums[0].price}</h4>
-            <a href="http://localhost:2121/albums.html">
+            <a href="https://coleworld.herokuapp.com/albums.html">
             <button style="padding: 0.6rem;
             outline: none;
             border: none;
@@ -86,7 +86,7 @@ function getOneAlbum(id) {
         </div>
       </div>
       `;
-      // window.location.replace("http://localhost:2121/oneAlbum.html");
+      // window.location.replace("https://coleworld.herokuapp.com/oneAlbum.html");
       document.write(html);
     });
   console.log(id);
@@ -108,11 +108,11 @@ fetch("https://coleworld.herokuapp.com/users/users/verify", {
   });
 
 function addtoCart(id) {
-  fetch(`http://localhost:2121/albums/${id}`)
+  fetch(`https://coleworld.herokuapp.com/albums/${id}`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      fetch(`http://localhost:2121/users/${id}/cart/`, {
+      fetch(`https://coleworld.herokuapp.com/users/${id}/cart/`, {
         method: "POST",
         body: JSON.stringify(data[0]),
         headers: {
@@ -129,13 +129,13 @@ function addtoCart(id) {
 
 const cartContainer = document.querySelector("#cartItems");
 function showcartItem(id) {
-  fetch(`http://localhost:2121/users/${id}/cart`)
+  fetch(`https://coleworld.herokuapp.com/users/${id}/cart`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
       cartContainer.innerHTML = "";
       albums.forEach((album) => {
-        cartContainer.innerHTML += `
+        cartContainer.html += `
       <div class="card">
       <h1>${album.album_name}</h1>
       </div>
