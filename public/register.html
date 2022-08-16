@@ -14,68 +14,54 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/53a149f81a.js" crossorigin="anonymous"></script>
 
     <!-- CSS LINK -->
     <!-- ************************************************* -->
     <link rel="stylesheet" href="./styles/styles.css" />
+     <link rel="stylesheet" href="./styles/navbar.css">
   </head>
   <body style="background-color: black">
     <header>
       <!-- NAVBAR -->
       <!-- ******************************************************** -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid navigation">
-          <div>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid navigation">
+        <div>
+         
+            <button id="nav-btn" onclick='toggleNav()'>
+          <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-links d-flex align-items-center">
             <a class="navbar-brand" href="#"
-              ><img
-                src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png"
-                class="logo"
-                alt=""
-            /></a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="./index.html"
-                  style="color: white"
-                  >HOME</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./albums.html" style="color: white"
-                  >ALBUMS</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./artists.html" style="color: white"
-                  >ARTISTS</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./login.html" style="color: white"
-                  >LOGIN</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" style="color: white">REGISTER</a>
-              </li>
-            </ul>
-
-            <div class="user d-flex gap-2">
+             ><img src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png" class="logo" alt=""
+           /></a>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="./index.html"
+                style="color: white"
+                >HOME</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./albums.html" style="color: white">ALBUMS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./artists.html" style="color: white"
+                >ARTISTS</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./login.html" style="color: white">LOGIN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./register.html" style="color: white">REGISTER</a>
+            </li>
+            <div class="user d-flex gap-2 pt-2 d-flex align-items-center">
               <box-icon
                 type="solid"
                 name="user-circle"
@@ -96,54 +82,54 @@
                 aria-controls="offcanvasRight"
               ></box-icon>
             </div>
-  
-            <!--USER DETAILS-->
-            <!-- ******************************************************************************************* -->
-            <div
-              class="offcanvas offcanvas-end"
-              tabindex="-1"
-              id="offcanvasUserDetails"
-              aria-labelledby="offcanvasRightLabel"
-            >
-              <div class="offcanvas-header">
-                <h5 id="offcanvasRightLabel">USER DETAILS</h5>
-                <button
-                  type="button"
-                  class="btn-close text-reset"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="offcanvas-body">USER</div>
-            </div>
-  
-            <!-- ********************************************************************************************** -->
-  
-            <!--SHOPPING CART -->
-            <!-- ******************************************************************************************* -->
-            <div
-              class="offcanvas offcanvas-end"
-              tabindex="-1"
-              id="offcanvasRight"
-              aria-labelledby="offcanvasRightLabel"
-            >
-              <div class="offcanvas-header">
-                <h5 id="offcanvasRightLabel">SHOPPING CART</h5>
-                <button
-                  type="button"
-                  class="btn-close text-reset"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="offcanvas-body">Items brought</div>
-            </div>
-  
-            <!-- **************************************************************************************************** -->
+          </ul>
 
+          <!--USER DETAILS-->
+          <!-- ******************************************************************************************* -->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasUserDetails"
+            aria-labelledby="offcanvasRightLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">USER DETAILS</h5>
+              <button
+                type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">USER</div>
           </div>
+
+          <!-- ********************************************************************************************** -->
+
+          <!--SHOPPING CART -->
+          <!-- ******************************************************************************************* -->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="offcanvasRightLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">SHOPPING CART</h5>
+              <button
+                type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">Items brought</div>
+          </div>
+
+          <!-- **************************************************************************************************** -->
         </div>
-      </nav>
+      </div>
+    </nav>
     </header>
 
     <section id="register" class="container pt-5">
@@ -282,6 +268,9 @@ admin
             "https://coleworld.herokuapp.com/login.html"
           );
       }
+            function toggleNav() {
+  document.getElementsByClassName("navbar-links")[0].classList.toggle("active");
+}
     </script>
   </body>
 </html>

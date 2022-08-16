@@ -14,10 +14,15 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/53a149f81a.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- CSS LINK -->
     <!-- ************************************************* -->
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
   </head>
   <body>
     <!-- NAVBAR -->
@@ -25,26 +30,18 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid navigation">
         <div>
-          <a class="navbar-brand" href="./index.html"
-            ><img
-              src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png"
-              class="logo"
-              alt=""
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
+          <button id="nav-btn" onclick="toggleNav()">
+            <i class="fa-solid fa-bars"></i>
           </button>
         </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-links d-flex align-items-center">
+            <a class="navbar-brand" href="#"
+              ><img
+                src="https://i.postimg.cc/26HfkX1G/cole-woorld-2.png"
+                class="logo"
+                alt=""
+            /></a>
             <li class="nav-item">
               <a
                 class="nav-link active"
@@ -65,36 +62,37 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" style="color: white">LOGIN</a>
+              <a class="nav-link" href="./login.html" style="color: white"
+                >LOGIN</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./register.html" style="color: white"
                 >REGISTER</a
               >
             </li>
+            <div class="user d-flex gap-2 pt-2 d-flex align-items-center">
+              <box-icon
+                type="solid"
+                name="user-circle"
+                style="background-color: white"
+                class="rounded user-button"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasUserDetails"
+                aria-controls="offcanvasRight"
+              ></box-icon>
+              <box-icon
+                name="cart-add"
+                style="background-color: white"
+                class="rounded"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+              ></box-icon>
+            </div>
           </ul>
-
-          <div class="user d-flex gap-2">
-            <box-icon
-              type="solid"
-              name="user-circle"
-              style="background-color: white"
-              class="rounded user-button"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasUserDetails"
-              aria-controls="offcanvasRight"
-            ></box-icon>
-            <box-icon
-              name="cart-add"
-              style="background-color: white"
-              class="rounded"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasRight"
-              aria-controls="offcanvasRight"
-            ></box-icon>
-          </div>
 
           <!--USER DETAILS-->
           <!-- ******************************************************************************************* -->
@@ -135,7 +133,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="offcanvas-body">Items bought</div>
+            <div class="offcanvas-body">Items brought</div>
           </div>
 
           <!-- **************************************************************************************************** -->
@@ -244,6 +242,11 @@
           window.location.replace(
             "https://coleworld.herokuapp.com/albums.html"
           );
+        function toggleNav() {
+          document
+            .getElementsByClassName("navbar-links")[0]
+            .classList.toggle("active");
+        }
       }
     </script>
   </body>

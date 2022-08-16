@@ -4,7 +4,9 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
+#home {
+  background-image: url("https://i.postimg.cc/NFhm26Qj/Pluto-x-Baby-Pluto-Future-Lil-Uzi-Vert-Wallpaper-750-x-1334.png");
+}
 body {
   transition: background 0.2s linear;
   margin: 0;
@@ -175,6 +177,16 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
+.box {
+  width: auto;
+}
+
+.box img {
+  max-width: 100%;
+  width: 100%;
+  height: auto; /* vary this to your needs ie auto, 100%, etc */
+  margin: 0 auto;
+}
 
 .carousel-item {
   position: relative;
@@ -332,11 +344,52 @@ button {
   cursor: pointer;
   transition: 0.4s ease;
 }
-
+#caro1 {
+  display: none;
+}
 .artists_margin {
   margin-top: 110px;
 }
 
 .user-button {
   cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  .box {
+    width: auto;
+  }
+
+  .box img {
+    max-width: 100%;
+    width: 100%;
+    height: auto; /* vary this to your needs ie auto, 100%, etc */
+    margin: 0 auto;
+    padding-top: 8rem;
+  }
+
+  #count_it {
+    display: none;
+  }
+
+  #down_bad {
+    display: none;
+  }
+  #amari {
+    display: none;
+  }
+
+  #amari2 {
+    display: none;
+  }
+
+  #gang {
+    display: none;
+  }
+  #caro-btn {
+    display: none;
+  }
+  #caro-btn1 {
+    margin-top: 25rem;
+    margin-right: 7rem;
+  }
 }
