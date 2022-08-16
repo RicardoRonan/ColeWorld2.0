@@ -336,3 +336,15 @@ button {
 .user-button {
   cursor: pointer;
 }
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1280px) {
+  #amari {
+    margin-left: 15rem;
+  }
+
+  .albums_div {
+    padding-left: 80px36;
+  }
+}

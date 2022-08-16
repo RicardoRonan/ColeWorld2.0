@@ -2,7 +2,7 @@
 
 let albums = [];
 const uContainer = document.querySelector(".albums_div");
-fetch("https://coleworld.herokuapp.com/albums")
+fetch("http://localhost:2121/albums")
   .then((res) => res.json())
   .then((data) => {
     albums = data;
@@ -36,7 +36,7 @@ function showalbums(albums) {
 // Getting One Album
 
 function getOneAlbum(id) {
-  fetch(`https://coleworld.herokuapp.com/albums/${id}`, {
+  fetch(`http://localhost:2121/albums/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
@@ -47,9 +47,9 @@ function getOneAlbum(id) {
       albums = data;
       console.log(data);
       html = `
-      <div class="container">
+      <div class="container" style="margin: 100px;">
         <h1>${albums[0].album_name}</h1>
-        <div class="row" style="display: flex; gap: 20px">
+        <div class="row" style="display: flex; gap: 20px;">
           <div class="col">
             <img src="${albums[0].image}" style="width: 500px">
           </div>
@@ -61,7 +61,7 @@ function getOneAlbum(id) {
             <p>Release Date: ${albums[0].release_date}</p>
             <h4 style="font-size: 1.5rem">R ${albums[0].price}</h4>
             <a href="http://localhost:2121/albums.html">
-            <button style="  padding: 0.6rem;
+            <button style="padding: 0.6rem;
             outline: none;
             border: none;
             border-radius: 3px;
@@ -71,14 +71,13 @@ function getOneAlbum(id) {
             cursor: pointer;
             transition: 0.4s ease; width: fit-content;
             height: 40px;
-            cursor: pointer;
             border-style: none;
             background-color: #ff3838;
             color: #fff;
             font-size: 15px;
             outline: none;
-            box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
-            transition: all 0.5s ease-in-out;" onmouseover="transform: scale(0.95) translateX(-5px);
+            box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);" 
+            onmouseover="transform: scale(0.95) translateX(-5px);
             transition: all 0.5s ease-in-out;">Go Back</button>
             </a>
           </div>
@@ -90,5 +89,3 @@ function getOneAlbum(id) {
     });
   console.log(id);
 }
-// Cart
-let cart = [];
